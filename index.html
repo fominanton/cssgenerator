@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+	<meta charset="UTF-8">
+	<title>CSSGenerator</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/app.js"></script>
+</head>
+
+<body>
+	<main>
+		<div class="props">
+			<div class="add-prop">
+				<div>
+					<input type="hidden" id="addprop">
+					<div class="select-div">
+
+						<label for="select" class="select">
+
+							<input type="radio" name="list" value="not_changed" id="bg" checked />
+							<input type="radio" name="list" value="not_changed" id="select">
+							<label class="bg" for="bg"></label>
+							<div class="items" id="">
+								<input type="radio" name="list" value="margin-left" id="list[0]">
+								<label for="list[0]">margin-left</label>
+
+								<input type="radio" onclick="select('list[1]')" name="list" value="margin-top" id="list[1]">
+								<label for="list[1]" onclick="select('list[1]')">margin-top</label>
+
+
+								<input type="radio" name="list" onclick="select('list[2]')" value="background" id="list[2]">
+								<label for="list[2]" onclick="select('list[2]')">background</label>
+
+								<input type="radio" name="list" onclick="select('list[3]')" value="transform" id="list[3]">
+								<label for="list[3]" onclick="select('list[3]')">transform</label>
+								
+								<input type="radio" name="list" onclick="select('list[4]')" value="scale" id="list[4]">
+								<label for="list[4]" onclick="select('list[4]')">scale</label>
+
+
+								<!-- Текст селекта по умолчанию. Выводится тогда, когда ничего не выбрано -->
+								<span id="text">Select something...</span>
+							</div>
+						</label>
+
+					</div>
+					<button onclick="addprop()">ADD PROP</button>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="infinite">
+					<label for="infinite">infinite</label>
+				</div>
+				<div class="checkbox">
+					<div>
+						<input type="radio" id="hover" name="hover">
+						<label for="hover">hover</label>
+					</div>
+					<div>
+						<input type="radio" id="click" name="hover">
+						<label for="click">click</label>
+					</div>
+
+
+				</div>
+				<div class="animation-duration">
+					<input type="text" id="animation-duration" value="5s">
+					<label for="animation-duration">animation-duration</label>
+				</div>
+			</div>
+			<div id="frames" class="frames">
+				<div id="0" class="frame">
+					<h2>0%</h2>
+					<div class="0-frame-prop">
+						<div class="margin-left">
+							<label>margin-left: </label><input id="margin-left-0" onchange="change('margin-left-0')" type="text">
+							<input id="margin-left-0-for-css" type="hidden">
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+			<button onclick="addframe()">ADD FRAME</button>
+
+			<input id="persent" type="number" value="25">
+			<label for="persent">%</label>
+			<button onclick="getcss()">GET</button>
+
+		</div>
+		<div class="result">
+			<div class="html">
+
+				<div><textarea name="" id="css" onchange="gethtml()">
+																	#demonstration{
+																		width: 150px;
+																		height: 50px;
+																		background: red;
+																		}
+					</textarea>
+				</div>
+			</div>
+
+			<div class="css">
+				<h3>RESULT</h3>
+				<pre id="generated-css">
+
+				</pre>
+
+			</div>
+
+
+		</div>
+
+	</main>
+	<div class="demonstration-box">
+		<h3>demonstration</h3>
+		<button id="demonstration">
+			
+		</button>
+	</div>
+
+
+	<script src="js/app.js"></script>
+</body>
+
+</html>
